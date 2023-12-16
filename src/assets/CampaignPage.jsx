@@ -61,7 +61,7 @@ const CampaignPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://api.framesify.com/campaign/${user_id}/download`,
+        `https://api.framesify.com/campaign/${user_id}/download`,
         {
           method: "POST",
           body: formData,
@@ -87,7 +87,7 @@ const CampaignPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `http://api.framesify.com/campaign/${user_id}`
+        `https://api.framesify.com/campaign/${user_id}`
       );
       setData(result.data);
     };
