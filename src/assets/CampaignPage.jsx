@@ -3,6 +3,7 @@ import ImageTool from "./Components/ImageTool";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import LoadingComponent from "./Components/LoadingComponent";
+// import ImageShareComponent from "./Components/ImageShareComponent";
 
 const CampaignPage = () => {
   const [showModel, setShowModel] = useState(false);
@@ -60,7 +61,7 @@ const CampaignPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://127.0.0.1:5000/campaign/${user_id}/download`,
+        `http://api.framesify.com/campaign/${user_id}/download`,
         {
           method: "POST",
           body: formData,
@@ -72,20 +73,22 @@ const CampaignPage = () => {
       }
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       const resultant = dataURItoBlob(data);
       const blobURL = URL.createObjectURL(resultant);
       setResultImage(blobURL);
       setLoading(false);
     } catch (error) {
       console.error("Error sending cropped image:", error);
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(`http://localhost:5000/campaign/${user_id}`);
+      const result = await axios(
+        `http://api.framesify.com/campaign/${user_id}`
+      );
       setData(result.data);
     };
     fetchData();
@@ -177,6 +180,9 @@ const CampaignPage = () => {
                 Share Through Whatsapp
               </button> */}
                 <button onClick={refreshPage}> New</button>
+                {/* <div className="">
+                  <ImageShareComponent imageUrl={resultImage} />
+                </div> */}
               </div>
             </div>
           )}
