@@ -10,23 +10,7 @@
   display: none;
 }
 
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
-
-/* * {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-} */
-
-/* .container {
-  width: 60vw;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .cropper {
-  /* position: relative; */
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -34,7 +18,6 @@
   justify-content: center;
   border-radius: 8px;
   overflow: hidden;
-  /* box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.09); */
 }
 
 input[type="radio"] {
@@ -53,28 +36,6 @@ input[type="radio"] {
   margin: 1rem;
 }
 
-/* .btn-outline {
-  background: #ffffff;
-  color: #1895b0;
-  border: 2px solid #1895b0;
-} */
-
-/* .action-btns {
-  padding-bottom: 1rem;
-} */
-
-/* .btn-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .cropped-img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-} */
-
 .aspect-ratios {
   display: flex;
   align-items: center;
@@ -89,3 +50,7 @@ input[type="radio"] {
   justify-content: center;
   align-items: center;
 }
+
+/* ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium" */
