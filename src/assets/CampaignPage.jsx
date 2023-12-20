@@ -112,17 +112,39 @@ const CampaignPage = () => {
     document.body.removeChild(downloadLink);
   };
 
-  // const shareViaWhatsApp = (imageUrl, imageName) => {
-  //   // Construct the WhatsApp share URL
-  //   const shareURL = `whatsapp://send?text=Check out this image: ${imageName}%0A${imageUrl}`;
-
-  //   // Open the WhatsApp share URL
-  //   window.open(shareURL);
-  // };
-
   const refreshPage = () => {
     window.location.reload();
   };
+
+  const handleOnSubmit = async () => {
+    const image = data;
+    const blob = await fetch(image).then((r) => r.blob());
+    const file = new File([blob], "share.png", { type: blob.type });
+
+    if (navigator.share) {
+      await navigator
+        .share({
+          title: "title",
+          text: "your text",
+          url: "url to share",
+          files: [file],
+        })
+        .then(() => console.log("Successful share"))
+        .catch((error) => console.log("Error in sharing", error));
+    } else {
+      console.log("system does not support sharing files.");
+    }
+  };
+
+  useEffect(() => {
+    if (navigator.share === undefined) {
+      if (window.location.protocol === "http:") {
+        window.location.replace(
+          window.location.href.replace(/^http:/, "https:")
+        );
+      }
+    }
+  }, []);
 
   if (!data) return <LoadingComponent />;
   return (
@@ -130,7 +152,7 @@ const CampaignPage = () => {
       {loading ? (
         <LoadingComponent />
       ) : (
-        <div className="w-full h-[950px] bg-gray-500 p-5 flex item-center justify-center">
+        <div className="w-full h-screen md:h-[975px] bg-gray-500 p-5 flex item-center justify-center">
           {!resultImage ? (
             <div className="absolute bg-white mt-10 p-10 flex-column justify-center h-fit rounded md:w-1/2 lg:w-1/3">
               <img src={data.frame_image} alt="Template" />
@@ -170,19 +192,31 @@ const CampaignPage = () => {
               </form>
             </div>
           ) : (
-            <div className="bg-white p-10 flex-column justify-center rounded md:w-1/2 lg:w-1/3 md:h-screen">
-              <img src={resultImage} alt="" />
-              <div className="bg-gray-500 space-x-10 flex-column h-48">
-                <button onClick={() => downloadImage(resultImage)}>
+            <div className=" bg-white p-10 flex-column justify-center rounded md:w-1/2 lg:w-1/3 md:h-auto space-y-10">
+              <img src={resultImage} alt="Result Image" />
+              <div className=" download-div">
+                <button
+                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+                  onClick={() => downloadImage(resultImage)}
+                  className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
+                >
                   Download
                 </button>
-                {/* <button onClick={() => shareViaWhatsApp(resultImage, "Poster")}>
-                Share Through Whatsapp
-              </button> */}
-                <button onClick={refreshPage}> New</button>
-                {/* <div className="">
-                  <ImageShareComponent imageUrl={resultImage} />
-                </div> */}
+                <button
+                  onClick={refreshPage}
+                  className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
+
+                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+                >
+                  New
+                </button>
+                <button
+                  onClick={handleOnSubmit}
+                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
+                  className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
+                >
+                  Share Image
+                </button>
               </div>
             </div>
           )}

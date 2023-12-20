@@ -5,7 +5,6 @@ import ActiveCampaign from "./Components/ActiveCampaign";
 import Working from "./Components/Working";
 import Footer from "./Components/Footer";
 import Navigation from "./Components/Navigation";
-// import { NavbarDefault } from "./Components/NavbarDefault";
 
 const LandingPage = () => {
   return (
