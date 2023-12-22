@@ -54,7 +54,7 @@ const CampaignPage = () => {
 
     formData.append("textData", textValue);
     const blobObject = dataURItoBlob(imgAfterCrop);
-    console.log(blobObject);
+    // console.log(blobObject);
     formData.append("croppedImage", blobObject);
 
     // Send formData to backend using fetch or your preferred method
@@ -181,10 +181,10 @@ const CampaignPage = () => {
                 />
                 <button
                   type="submit"
-                  className="ml-24 mt-10
-                  text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 
+                  className=" mt-10 ml-28
+                  text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4
                   focus:ring-blue-300 font-medium rounded-full
-                  text-sm px-5 py-2.5 text-center me-2 mb-2 
+                  text-sm px-5 py-2.5 text-center me-2 mb-2
                   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:ml-[10.7rem]"
                 >
                   Submit
@@ -194,9 +194,8 @@ const CampaignPage = () => {
           ) : (
             <div className=" bg-white p-10 flex-column justify-center rounded md:w-1/2 lg:w-1/3 md:h-auto space-y-10">
               <img src={resultImage} alt="Result Image" />
-              <div className=" download-div">
+              <div className=" mobile_flex">
                 <button
-                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
                   onClick={() => downloadImage(resultImage)}
                   className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
                 >
@@ -205,14 +204,11 @@ const CampaignPage = () => {
                 <button
                   onClick={refreshPage}
                   className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
-
-                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
                 >
                   New
                 </button>
                 <button
                   onClick={handleOnSubmit}
-                  // className="w-5/6 p-auto text-white bg-[#3b5998] font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2"
                   className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
                 >
                   Share Image

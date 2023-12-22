@@ -67,30 +67,6 @@ const ImageTool = (props) => {
             aspect_ratio={props.aspect_ratio}
           />
         ) : (
-          // <div className="flex-column items-center">
-          //   <div>
-          //     <img src={props.imgAfterCrop} className="w-48 h-48" />
-          //   </div>
-          //   <div className="flex space-x-10">
-          //     <button
-          //       onClick={() => {
-          //         setCurrentPage("crop-img");
-          //       }}
-          //       className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          //     >
-          //       Crop
-          //     </button>
-          //     <button
-          //       onClick={() => {
-          //         setCurrentPage("choose-img");
-          //         setImage("");
-          //       }}
-          //       className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          //     >
-          //       New Image
-          //     </button>
-          //   </div>
-          // </div>
           <div
             className="rounded block border-2 w-full bg-transparent mt-5 p-1.5 justify-self-center text-gray-900 
           placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"

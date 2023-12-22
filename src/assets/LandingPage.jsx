@@ -4,6 +4,7 @@ import About from "./Components/About";
 import ActiveCampaign from "./Components/ActiveCampaign";
 import Working from "./Components/Working";
 import Footer from "./Components/Footer";
+import Pricing from "./Components/Pricing";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <About />
       <ActiveCampaign />
       <Working />
+      <Pricing />
       <Footer />
     </div>
   );

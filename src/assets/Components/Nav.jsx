@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Navbar = () => {
+const Nav = () => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -32,16 +32,24 @@ const Navbar = () => {
                 <div className="hidden sm:ml-6 sm:block absolute right-0">
                   <ul className="flex space-x-4">
                     <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/">Home</Link>
+                      <NavLink to="/" activeClassName="text-white">
+                        Home
+                      </NavLink>
                     </li>
                     <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/about">About</Link>
+                      <NavLink to="/about" activeClassName="text-white">
+                        About
+                      </NavLink>
                     </li>
                     <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="#">Pricing</Link>
+                      <NavLink to="#" activeClassName="text-white">
+                        Pricing
+                      </NavLink>
                     </li>
                     <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/contact">Contact</Link>
+                      <NavLink to="/contact" activeClassName="text-white">
+                        Contact
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
@@ -52,16 +60,24 @@ const Navbar = () => {
             <div className="pt-2 pl-5 pb-5">
               <ul>
                 <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/">Home</Link>
+                  <NavLink to="/" activeClassName="text-white">
+                    Home
+                  </NavLink>
                 </li>
                 <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/about">About</Link>
+                  <NavLink to="/about" activeClassName="text-white">
+                    About
+                  </NavLink>
                 </li>
                 <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="#">Pricing</Link>
+                  <NavLink to="#" activeClassName="text-white">
+                    Pricing
+                  </NavLink>
                 </li>
                 <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/contact">Contact</Link>
+                  <NavLink to="/contact" activeClassName="text-white">
+                    Contact
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -72,4 +88,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nav;

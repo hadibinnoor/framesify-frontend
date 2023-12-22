@@ -1,34 +1,32 @@
+/* eslint-disable no-irregular-whitespace */
+/* eslint-disable react/no-unescaped-entities */
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Navbar />
-      <div className="h-screen">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
-        modi animi dolores aspernatur reiciendis ipsam facere maiores voluptate
-        ab quod. Odio perferendis harum corrupti! Animi possimus explicabo
-        laborum dolorem nemo.
+      <div className="p-5 flex-column space-y-5 mt-10 md:p-20 lg:px-40">
+        <h1 className="text-xl font-medium">About Us</h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos
-          numquam necessitatibus omnis dolores eveniet deserunt repellat illum
-          minus nisi repudiandae! Ab inventore doloribus harum dolorem magni
-          labore consequatur accusamus fuga! Ratione, in! Error, quisquam harum
-          veniam soluta neque asperiores consequatur perspiciatis, deleniti
-          doloremque id doloribus expedita fugit distinctio dolorem ut accusamus
-          consectetur omnis repellat aperiam nobis, a veritatis? Nisi, dolore.
-          Tempore iste eveniet iusto dignissimos, nostrum eum asperiores
-          corporis ipsam doloribus qui molestiae tempora molestias quam eius?
-          Omnis cum enim vel est ullam eum rerum odio, dolore optio,
-          consequuntur dicta. Incidunt dolore fuga quisquam sapiente laborum a
-          dolorem vitae blanditiis corrupti laudantium eveniet commodi cum
-          consequatur excepturi officiis, odit sit. Molestias unde dolorum modi
-          dolor incidunt nostrum adipisci eveniet maxime. Doloribus, suscipit.
-          Recusandae error soluta, adipisci, quibusdam dolor aperiam rerum
-          dolore dolorum consequatur ad ipsam. Eum esse vero, enim odio, quae ab
-          aspernatur quia modi odit earum aperiam sequi iure?
+          We're not here to boast about our mission or vision. Framesify was a
+          project created by four final-year computer science students from
+          Farook College, Kozhikode.
         </p>
+        <h4>How did we end up here?</h4>
+        <p>
+          We observed the shift in event promotion within our college and
+          outside. With everything transitioning to social media, we embraced
+          this concept.
+        </p>
+        <p>
+          Framesify simplifies event promotion by creating personalized posters
+          with photos and names. Afterwards, you can easily share or download
+          these posters on social media.
+        </p>
+        <h4> That's it.</h4>
+        <h4> Thank You :)</h4>
       </div>
       <Footer />
     </div>

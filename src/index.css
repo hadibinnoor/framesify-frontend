@@ -10,6 +10,10 @@
   display: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .cropper {
   width: 4rem;
   height: 4rem;
@@ -44,7 +48,7 @@ input[type="radio"] {
   font-weight: 500;
 }
 
-.download-div {
+.mobile_flex {
   display: flex;
   flex-direction: column;
   justify-content: center;

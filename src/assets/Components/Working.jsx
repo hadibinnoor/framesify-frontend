@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const Working = () => {
   return (
-    <div className="mt-10 p-10 md:p-20">
+    <div className="mt-20 p-10 md:px-28">
       <h1 className=" text-3xl font-medium">How Does it Work ?</h1>
       <div className=" flex-column mt-10 justify-center space-y-10">
         <div className="flex-column space-y-2 justify-center lg:p-10">
