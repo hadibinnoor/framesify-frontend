@@ -22,7 +22,7 @@ function FileInput({ onImageSelected, imageName }) {
   };
 
   return (
-    <div>
+    <div className="">
       <input
         type="file"
         accept="image/*"
@@ -33,7 +33,7 @@ function FileInput({ onImageSelected, imageName }) {
       />
 
       <button
-        className="mt-5 relative m-0 block w-full min-w-0 flex-auto
+        className="mt-5 relative w-full m-0 block flex-auto
          rounded border border-solid border-neutral-300 bg-clip-padding 
          px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out 
          file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 

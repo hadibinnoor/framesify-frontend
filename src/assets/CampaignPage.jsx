@@ -117,25 +117,25 @@ const CampaignPage = () => {
     window.location.reload();
   };
 
-  const handleOnSubmit = async () => {
-    const image = data;
-    const blob = await fetch(image).then((r) => r.blob());
-    const file = new File([blob], "share.png", { type: blob.type });
+  // const handleOnSubmit = async () => {
+  //   const image = data;
+  //   const blob = await fetch(image).then((r) => r.blob());
+  //   const file = new File([blob], "share.png", { type: blob.type });
 
-    if (navigator.share) {
-      await navigator
-        .share({
-          title: "title",
-          text: "your text",
-          url: "url to share",
-          files: [file],
-        })
-        .then(() => console.log("Successful share"))
-        .catch((error) => console.log("Error in sharing", error));
-    } else {
-      console.log("system does not support sharing files.");
-    }
-  };
+  //   if (navigator.share) {
+  //     await navigator
+  //       .share({
+  //         title: "title",
+  //         text: "your text",
+  //         url: "url to share",
+  //         files: [file],
+  //       })
+  //       .then(() => console.log("Successful share"))
+  //       .catch((error) => console.log("Error in sharing", error));
+  //   } else {
+  //     console.log("system does not support sharing files.");
+  //   }
+  // };
 
   useEffect(() => {
     if (navigator.share === undefined) {
@@ -153,9 +153,9 @@ const CampaignPage = () => {
       {loading ? (
         <LoadingComponent />
       ) : (
-        <div className="w-full h-screen md:h-[1100px] bg-gray-500 p-5 flex item-center justify-center">
+        <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 p-5 flex item-center justify-center">
           {!resultImage ? (
-            <div className="absolute bg-white mt-10 p-10 flex-column justify-center h-fit rounded md:w-1/2 lg:w-1/3">
+            <div className="absolute bg-white mt-10 p-10 flex-column justify-center h-fit rounded md:w-1/2 lg:w-1/3 border-2">
               <img src={data.frame_image} alt="Template" />
               <div className="mt-5 space-y-5">
                 <h1 className="text-3xl font-bold font-sans">
@@ -167,7 +167,7 @@ const CampaignPage = () => {
                 </p>
                 <p>Upload your photo and then download or share the poster</p>
               </div>
-              <form className="" onSubmit={handleFormSubmit}>
+              <form className="grid" onSubmit={handleFormSubmit}>
                 {/* <input
                   type="text"
                   value={textValue}
@@ -187,11 +187,8 @@ const CampaignPage = () => {
                 />
                 <button
                   type="submit"
-                  className=" mt-10 ml-28
-                  text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4
-                  focus:ring-blue-300 font-medium rounded-full
-                  text-sm px-5 py-2.5 text-center me-2 mb-2
-                  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 lg:ml-[10.7rem]"
+                  className="bg-blue-700 mt-10 text-white font-medium rounded-full
+                  // text-sm px-5 py-2.5 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-20"
                 >
                   Submit
                 </button>
@@ -213,12 +210,12 @@ const CampaignPage = () => {
                 >
                   New
                 </button>
-                <button
+                {/* <button
                   onClick={handleOnSubmit}
                   className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
                 >
                   Share Image
-                </button>
+                </button> */}
               </div>
             </div>
           )}

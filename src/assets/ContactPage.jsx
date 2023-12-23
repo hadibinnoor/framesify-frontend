@@ -1,9 +1,9 @@
-import Nav from "./Components/Nav";
+import Navbar from "./Components/Navbar";
 
 const ContactPage = () => {
   return (
     <div>
-      <Nav />
+      <Navbar />
       ContactPage
     </div>
   );
