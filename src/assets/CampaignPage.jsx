@@ -15,7 +15,7 @@ const CampaignPage = () => {
   const [loading, setLoading] = useState(false);
 
   const { user_id } = useParams();
-  const currentUrl = window.location.href;
+  // const currentUrl = window.location.href;
 
   // const handleTextChange = (event) => {
   //   setTextValue(event.target.value);
@@ -212,7 +212,7 @@ const CampaignPage = () => {
                   New
                 </button>
 
-                <a
+                {/* <a
                   className=" "
                   data-action="share/whatsapp/share"
                   href={`whatsapp://send?text=${data.client_title}  Link:${currentUrl}`}
@@ -223,7 +223,7 @@ const CampaignPage = () => {
                   >
                     Share
                   </div>
-                </a>
+                </a> */}
               </div>
             </div>
           )}
