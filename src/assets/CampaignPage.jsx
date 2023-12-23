@@ -221,7 +221,7 @@ const CampaignPage = () => {
                     // onClick={handleOnSubmit}
                     className="sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-[50px] py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
                   >
-                    Share Image
+                    Share
                   </div>
                 </a>
               </div>
