@@ -15,6 +15,7 @@ const CampaignPage = () => {
   const [loading, setLoading] = useState(false);
 
   const { user_id } = useParams();
+  const currentUrl = window.location.href;
 
   // const handleTextChange = (event) => {
   //   setTextValue(event.target.value);
@@ -210,12 +211,19 @@ const CampaignPage = () => {
                 >
                   New
                 </button>
-                {/* <button
-                  onClick={handleOnSubmit}
-                  className="w-4/6 sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
+
+                <a
+                  className=" "
+                  data-action="share/whatsapp/share"
+                  href={`whatsapp://send?text=${data.client_title}  Link:${currentUrl}`}
                 >
-                  Share Image
-                </button> */}
+                  <div
+                    // onClick={handleOnSubmit}
+                    className="sm:w-1/2 text-white bg-[#24292F] font-medium rounded-lg text-sm px-[50px] py-2.5 text-center inline-flex items-center md:dark:focus:ring-gray-500 md:dark:hover:bg-[#050708]/30 me-2 mb-2"
+                  >
+                    Share Image
+                  </div>
+                </a>
               </div>
             </div>
           )}
