@@ -1,4 +1,8 @@
-const Hero = () => {
+/* eslint-disable react/prop-types */
+const Hero = ({ pricingRef }) => {
+  const scrollToPricing = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="lg:flex mt-5 lg:mt-0 justify-center items-center p-4 lg:h-screen">
       <div className=" flex-column p-5 gap-4 justify-center">
@@ -15,7 +19,10 @@ const Hero = () => {
           <button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg bg-blue-500 border-white-500 ">
             Explore Campaigns
           </button>
-          <button className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border-2 border-gray-500">
+          <button
+            onClick={() => scrollToPricing(pricingRef)}
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border-2 border-gray-500"
+          >
             Create Campaigns
           </button>
         </div>
