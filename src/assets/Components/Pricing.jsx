@@ -11,7 +11,12 @@ const Pricing = ({ pricingRef }) => {
         </h5>
         <div className="flex items-baseline text-gray-900 dark:text-white">
           <span className="text-3xl font-semibold">₹</span>
-          <span className="text-5xl font-extrabold tracking-tight">400</span>
+          <span className="text-5xl font-extrabold tracking-tight">
+            <h2 className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+              <strike>499</strike>
+            </h2>
+            399
+          </span>
         </div>
         <ul role="list" className="space-y-5 my-7">
           <li className="flex items-center">
