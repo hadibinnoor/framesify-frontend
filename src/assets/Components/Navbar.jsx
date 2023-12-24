@@ -1,8 +1,13 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Navbar = () => {
+const Navbar = ({ pricingRef }) => {
+  const scrollToPricing = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -31,18 +36,26 @@ const Navbar = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:block absolute right-0">
                   <ul className="flex space-x-4">
-                    <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/about">About</Link>
-                    </li>
-                    <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="#">Pricing</Link>
-                    </li>
-                    <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                      <Link to="/contact">Contact</Link>
-                    </li>
+                    <Link to="/">
+                      <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                        Home
+                      </li>
+                    </Link>
+                    <Link to="/about">
+                      <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                        About
+                      </li>
+                    </Link>
+                    <Link to="/" onClick={() => scrollToPricing(pricingRef)}>
+                      <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                        Pricing
+                      </li>
+                    </Link>
+                    <Link to="/contact">
+                      <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                        Contact
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -51,18 +64,26 @@ const Navbar = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pl-5 pb-5">
               <ul>
-                <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/about">About</Link>
-                </li>
-                <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="#">Pricing</Link>
-                </li>
-                <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                  <Link to="/contact">Contact</Link>
-                </li>
+                <Link to="/">
+                  <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    Home
+                  </li>
+                </Link>
+                <Link to="/about">
+                  <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    About
+                  </li>
+                </Link>
+                <Link to="/" onClick={() => scrollToPricing(pricingRef)}>
+                  <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    Pricing
+                  </li>
+                </Link>
+                <Link to="/contact">
+                  <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                    Contact
+                  </li>
+                </Link>
               </ul>
             </div>
           </Disclosure.Panel>

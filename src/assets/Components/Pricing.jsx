@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-irregular-whitespace */
-const Pricing = () => {
+
+const Pricing = ({ pricingRef }) => {
   return (
-    <div className="mt-20 p-10 md:px-28 space-y-10">
+    <div ref={pricingRef} className="mt-20  space-y-10">
       <h1 className="text-3xl font-medium">Pricing</h1>
-      <div className="md:ml-10 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className=" w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
           Standard plan
         </h5>
@@ -92,6 +94,11 @@ const Pricing = () => {
           </button>
         </a>
       </div>
+      <p className="font-l">
+        <span className="font-semibold">Note:</span> You will be redirected to
+        Whatsapp when you click on “Choose Plan”. We will communicate regarding
+        design and all there.
+      </p>
     </div>
   );
 };

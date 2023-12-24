@@ -2,11 +2,11 @@ const Hero = () => {
   return (
     <div className="lg:flex mt-5 lg:mt-0 justify-center items-center p-4 lg:h-screen">
       <div className=" flex-column p-5 gap-4 justify-center">
-        <div className="">
-          <h1 className="mb-4 text-4xl tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl font-semibold lg:pl-20">
+        <div className="md:pl-20">
+          <h1 className="mb-4 text-4xl tracking-tight leading-none text-gray-900 md:text-5xl font-semibold">
             Make Your Offline Events Viral Online
           </h1>
-          <p className="mb-8 text-lg font-normal lg:text-xl lg:p-10">
+          <p className="mb-8 text-lg font-normal lg:text-xl">
             Framesify makes it simple: Personalize your campaign posters with
             your own photos and names in just a few clicks!
           </p>
@@ -20,7 +20,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <img src="Group 77.png" alt="photo grid" className="" />
+      <img src="Group 77.png" alt="photo grid" className="lg:w-1/2" />
     </div>
   );
 };

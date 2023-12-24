@@ -2,10 +2,10 @@
 /* eslint-disable react/no-unescaped-entities */
 const Working = () => {
   return (
-    <div className="mt-20 p-10 md:px-28">
+    <div className="mt-20 ">
       <h1 className=" text-3xl font-medium">How Does it Work ?</h1>
       <div className=" flex-column mt-10 justify-center space-y-10">
-        <div className="flex-column space-y-2 justify-center lg:p-10">
+        <div className="flex-column space-y-2 justify-center ">
           <h1 className="text-xl">Step 1: Choose Your Plan & Design</h1>
           <div className="md:flex  md:justify-between">
             <p className="max-w-3xl ">
@@ -16,7 +16,7 @@ const Working = () => {
             <img className="" src="demo.jpg" alt="" />
           </div>
         </div>
-        <div className="flex-column space-y-2 justify-center lg:p-10 ">
+        <div className="flex-column space-y-2 justify-center  ">
           <h1 className="text-xl">Step 2: Share Your Custom Link</h1>
           <div className="md:flex md:justify-between ">
             <p className="max-w-3xl ">
@@ -26,7 +26,7 @@ const Working = () => {
             <img className="" src="demo.jpg" alt="" />
           </div>
         </div>
-        <div className="flex-column space-y-2 justify-center lg:p-10">
+        <div className="flex-column space-y-2 justify-center ">
           <h1 className="text-xl">Step 3: Personalized Poster Creation</h1>
           <div className="md:flex md:justify-between ">
             <p className="max-w-3xl ">
@@ -36,7 +36,7 @@ const Working = () => {
             <img className="" src="demo.jpg" alt="" />
           </div>
         </div>
-        <div className="flex-column space-y-2 justify-center lg:p-10">
+        <div className="flex-column space-y-2 justify-center ">
           <h1 className="text-xl">Step 4: Share and Celebrate</h1>
           <div className="md:flex md:justify-between ">
             <p className="max-w-3xl ">

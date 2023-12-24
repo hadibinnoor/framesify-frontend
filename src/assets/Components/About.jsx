@@ -2,10 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div
-      className="bg-[#edf8f8] md:flex lg:py-10"
-      // className="flex-1 overflow-y-auto p-20 h-auto flex gap-20 bg-[#edf8f8]"
-    >
+    <div className="bg-[#edf8f8] md:flex lg:py-10">
       <div className="flex-colummn p-10 space-y-5 lg:px-32">
         <h1 className="text-3xl font-medium ">What Does Framesify Do ?</h1>
         <h1 className="text-xl mt-5">Hosting an offline event?</h1>

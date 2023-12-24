@@ -5,9 +5,9 @@ import Navbar from "./Components/Navbar";
 
 const AboutPage = () => {
   return (
-    <div className="h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="p-5 flex-column space-y-5 mt-10 md:p-20 lg:px-40">
+      <div className="p-5 flex-grow flex-column space-y-5 mt-10 md:p-20 lg:px-40">
         <h1 className="text-xl font-medium">About Us</h1>
         <p>
           We're not here to boast about our mission or vision. Framesify was a

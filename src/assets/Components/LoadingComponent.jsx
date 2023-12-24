@@ -1,7 +1,7 @@
 const LoadingComponent = () => {
   return (
     <div className="text-center h-full w-full flex justify-center items-center fixed">
-      <div role="status">
+      {/* <div role="status">
         <svg
           aria-hidden="true"
           className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -19,7 +19,8 @@ const LoadingComponent = () => {
           />
         </svg>
         <span className="sr-only">Loading...</span>
-      </div>
+      </div> */}
+      <div className="rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin absolute"></div>
     </div>
   );
 };
