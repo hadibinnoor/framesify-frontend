@@ -20,7 +20,7 @@ const ContactPage = () => {
                 </a>
               </p>
               <p>
-                Phone: <span>+917592084303</span>
+                Phone: <span>+917560829950</span>
               </p>
               <p>5VW6+2PX, Farook College, Kozhikode, Kerala 673632</p>
             </div>
