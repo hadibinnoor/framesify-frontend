@@ -9,14 +9,16 @@ import { useRef } from "react";
 
 const LandingPage = () => {
   const pricingRef = useRef(null);
+  const campaignRef = useRef(null);
+
   return (
     <div className="w-full h-full flex-row item-center relative">
       <Navbar pricingRef={pricingRef} />
       <div className="">
-        <Hero />
+        <Hero pricingRef={pricingRef} campaignRef={campaignRef} />
         <About />
         <div className="p-10 md:p-32">
-          <ActiveCampaign />
+          <ActiveCampaign campaignRef={campaignRef} />
           <Working />
           <Pricing pricingRef={pricingRef} />
         </div>

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-const ActiveCampaign = () => {
+const ActiveCampaign = ({ campaignRef }) => {
   return (
-    <div className="">
+    <div className="" ref={campaignRef}>
       <h1 className="text-3xl font-medium">Active Campaign</h1>
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar mt-10">
         <div className="flex flex-nowrap ">
