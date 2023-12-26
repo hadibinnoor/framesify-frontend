@@ -21,7 +21,7 @@ const About = () => {
         </p>
       </div>
       <div className="lg:w-1/2 flex">
-        <iframe src="https://giphy.com/embed/3oz8xAcGUfJvLiHG92"></iframe>
+        <iframe src="demo.gif" height="450px" width="250px"></iframe>
       </div>
     </div>
   );
