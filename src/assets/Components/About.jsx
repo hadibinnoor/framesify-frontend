@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div className="bg-[#edf8f8] md:flex lg:py-10">
+    <div className="bg-[#edf8f8] py-5 md:flex lg:py-10">
       <div className="flex-colummn p-10 space-y-5 lg:px-32">
         <h1 className="text-3xl font-medium ">What Does Framesify Do ?</h1>
         <h1 className="text-xl mt-5">Hosting an offline event?</h1>
@@ -20,7 +20,7 @@ const About = () => {
           town with Framesify!
         </p>
       </div>
-      <div className="lg:w-1/2 flex">
+      <div className="lg:w-1/2 flex justify-center">
         <iframe src="demo.gif" height="450px" width="250px"></iframe>
       </div>
     </div>
