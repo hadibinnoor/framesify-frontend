@@ -147,7 +147,7 @@ const CampaignPage = () => {
                     type="text"
                     value={textValue}
                     onChange={handleTextChange}
-                    placeholder="Text"
+                    placeholder="Name"
                     className="rounded block border-2 w-full mt-10 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
                   placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
                     required
