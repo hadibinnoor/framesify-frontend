@@ -4,12 +4,11 @@ import ImageTool from "./Components/ImageTool";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import LoadingComponent from "./Components/LoadingComponent";
-// import ImageShareComponent from "./Components/ImageShareComponent";
 
 const CampaignPage = () => {
   const [showModel, setShowModel] = useState(false);
   const [data, setData] = useState(null);
-  // const [textValue, setTextValue] = useState("");
+  const [textValue, setTextValue] = useState("");
   const [imgAfterCrop, setImgAfterCrop] = useState("");
   const [resultImage, setResultImage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,9 +16,10 @@ const CampaignPage = () => {
   const { user_id } = useParams();
   // const currentUrl = window.location.href;
 
-  // const handleTextChange = (event) => {
-  //   setTextValue(event.target.value);
-  // };
+  // console.log(data.text_field);
+  const handleTextChange = (event) => {
+    setTextValue(event.target.value);
+  };
 
   function toggleShow() {
     setShowModel((prevState) => !prevState);
@@ -54,7 +54,10 @@ const CampaignPage = () => {
       return new Blob([ab], { type: mimeType });
     };
 
-    // formData.append("textData", textValue);
+    if (data.text_field) {
+      formData.append("textData", textValue);
+    }
+
     const blobObject = dataURItoBlob(imgAfterCrop);
     // console.log(blobObject);
     formData.append("croppedImage", blobObject);
@@ -102,7 +105,7 @@ const CampaignPage = () => {
     downloadLink.href = imageUrl;
 
     // Set the download attribute and filename
-    downloadLink.download = "downloaded_image.png"; // Change the file name and extension as needed
+    downloadLink.download = `${data.client_title}.png`;
 
     // Append the anchor element to the body
     document.body.appendChild(downloadLink);
@@ -117,36 +120,6 @@ const CampaignPage = () => {
   const refreshPage = () => {
     window.location.reload();
   };
-
-  // const handleOnSubmit = async () => {
-  //   const image = data;
-  //   const blob = await fetch(image).then((r) => r.blob());
-  //   const file = new File([blob], "share.png", { type: blob.type });
-
-  //   if (navigator.share) {
-  //     await navigator
-  //       .share({
-  //         title: "title",
-  //         text: "your text",
-  //         url: "url to share",
-  //         files: [file],
-  //       })
-  //       .then(() => console.log("Successful share"))
-  //       .catch((error) => console.log("Error in sharing", error));
-  //   } else {
-  //     console.log("system does not support sharing files.");
-  //   }
-  // };
-
-  useEffect(() => {
-    if (navigator.share === undefined) {
-      if (window.location.protocol === "http:") {
-        window.location.replace(
-          window.location.href.replace(/^http:/, "https:")
-        );
-      }
-    }
-  }, []);
 
   if (!data) return <LoadingComponent />;
   return (
@@ -169,15 +142,17 @@ const CampaignPage = () => {
                 <p>Upload your photo and then download or share the poster</p>
               </div>
               <form className="grid" onSubmit={handleFormSubmit}>
-                {/* <input
-                  type="text"
-                  value={textValue}
-                  onChange={handleTextChange}
-                  placeholder="Text"
-                  className="rounded block border-2 w-full mt-10 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
+                {data.text_field && (
+                  <input
+                    type="text"
+                    value={textValue}
+                    onChange={handleTextChange}
+                    placeholder="Text"
+                    className="rounded block border-2 w-full mt-10 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
                   placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
-                  required
-                /> */}
+                    required
+                  />
+                )}
                 <ImageTool
                   visible={showModel}
                   onClose={toggleShow}
