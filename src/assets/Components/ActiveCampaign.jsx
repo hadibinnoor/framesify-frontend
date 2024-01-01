@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ActiveCampaign = ({ campaignRef }) => {
   return (
     <div className="" ref={campaignRef}>
-      <h1 className="text-3xl font-medium">Active Campaign</h1>
+      <h1 className="text-3xl font-medium">Running Campaigns</h1>
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar mt-10">
         <div className="flex flex-nowrap ">
           <Link to="/campaign/U4Aes">
