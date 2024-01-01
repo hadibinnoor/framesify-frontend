@@ -30,7 +30,7 @@ const Hero = ({ pricingRef, campaignRef }) => {
           </button>
         </div>
       </div>
-      <img src="Group 77.png" alt="photo grid" className="lg:w-1/2" />
+      <img src="Hero_img.jpg" alt="photo grid" className="lg:w-1/2" />
     </div>
   );
 };

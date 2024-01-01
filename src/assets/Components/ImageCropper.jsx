@@ -29,12 +29,6 @@ function ImageCropper({ image, onCropDone, onCropCancel, aspect_ratio }) {
   const isMobile = windowSize.width <= 768;
 
   const styleForMobile = {
-    // containerStyle: {
-    //   width: "75%",
-    //   height: "10rem",
-    //   padding: "1rem",
-    //   backgroundColor: "#fff",
-    // },
     containerStyle: {
       position: "absolute",
       top: "100px",
@@ -66,8 +60,8 @@ function ImageCropper({ image, onCropDone, onCropCancel, aspect_ratio }) {
     },
     cropAreaStyle: {
       border: "1px solid black",
-      width: "100%", // Take the full width of the container
-      height: "100%", // Take the full height of the container
+      width: "100%",
+      height: "100%",
     },
   };
 

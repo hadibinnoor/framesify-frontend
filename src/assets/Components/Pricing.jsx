@@ -15,7 +15,7 @@ const Pricing = ({ pricingRef }) => {
           </h5>
           <div className="flex items-baseline text-gray-900 dark:text-white">
             <span className="text-3xl font-semibold">₹</span>
-            <span className="text-5xl font-extrabold tracking-tight">399</span>
+            <span className="text-5xl font-extrabold tracking-tight">449</span>
           </div>
           <ul role="list" className="space-y-5 my-7">
             <li className="flex items-center">
