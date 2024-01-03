@@ -15,9 +15,7 @@ const ContactPage = () => {
             <div className="">
               <p>
                 Email:{" "}
-                <a href="mailto:fash.products@gmail.com">
-                  fash.products@gmail.com
-                </a>
+                <a href="mailto:contact@framesify.com">contact@framesify.com</a>
               </p>
               <p>
                 Phone: <span>+917560829950</span>
