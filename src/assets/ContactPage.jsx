@@ -13,12 +13,6 @@ const ContactPage = () => {
           <div className="space-y-2">
             <h3 className="text-lg">Reach out to us:</h3>
             <div className="">
-              {/* <p>
-                Email:{" "}
-                <a href="mailto:contact@framesify.com">
-                  <span style="font-weight: bold;">contact@framesify.com</span>
-                </a>
-              </p> */}
               <p>
                 <a
                   href="mailto:contact@framesify.com"
