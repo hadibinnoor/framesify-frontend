@@ -66,7 +66,7 @@ const CampaignPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.framesify.com/campaign/${user_id}/download`,
+        `http://127.0.0.1:5000/campaign/${user_id}/download`,
         {
           method: "POST",
           body: formData,
@@ -91,9 +91,7 @@ const CampaignPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        `https://api.framesify.com/campaign/${user_id}`
-      );
+      const result = await axios(`http://127.0.0.1:5000/campaign/${user_id}`);
       setData(result.data);
     };
     fetchData();
@@ -147,7 +145,7 @@ const CampaignPage = () => {
                     type="text"
                     value={textValue}
                     onChange={handleTextChange}
-                    placeholder="Name"
+                    placeholder={data.text_field}
                     className="rounded block border-2 w-full mt-10 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
                   placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
                     required
