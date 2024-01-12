@@ -8,7 +8,7 @@ import LoadingComponent from "./Components/LoadingComponent";
 const CampaignPage = () => {
   const [showModel, setShowModel] = useState(false);
   const [data, setData] = useState(null);
-  const [textValue, setTextValue] = useState("");
+  const [textValues, setTextValues] = useState([]);
   const [imgAfterCrop, setImgAfterCrop] = useState("");
   const [resultImage, setResultImage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,8 +17,13 @@ const CampaignPage = () => {
   // const currentUrl = window.location.href;
 
   // console.log(data.text_field);
-  const handleTextChange = (event) => {
-    setTextValue(event.target.value);
+  // const handleTextChange = (event) => {
+  //   setTextValue(event.target.value);
+  // };
+  const handleInputChange = (event, index) => {
+    const newValues = [...textValues];
+    newValues[index] = event.target.value;
+    setTextValues(newValues);
   };
 
   function toggleShow() {
@@ -53,9 +58,10 @@ const CampaignPage = () => {
       // Create a Blob from ArrayBuffer
       return new Blob([ab], { type: mimeType });
     };
+    console.log(textValues);
 
     if (data.text_field) {
-      formData.append("textData", textValue);
+      formData.append("textData", textValues);
     }
 
     const blobObject = dataURItoBlob(imgAfterCrop);
@@ -66,7 +72,7 @@ const CampaignPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.framesify.com/campaign/${user_id}/download`,
+        `http://127.0.0.1:5000/campaign/${user_id}/download`,
         {
           method: "POST",
           body: formData,
@@ -91,13 +97,29 @@ const CampaignPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        `https://api.framesify.com/campaign/${user_id}`
-      );
+      const result = await axios(`http://127.0.0.1:5000/campaign/${user_id}`);
       setData(result.data);
     };
     fetchData();
   }, [user_id]);
+
+  const stateValues = [];
+
+  const DynamicTextFields =
+    data && data.text_field
+      ? data.text_field.map((item, index) => (
+          <input
+            key={index}
+            type="text"
+            value={textValues[index]}
+            onChange={(event) => handleInputChange(event, index)}
+            placeholder={item}
+            className="rounded block border-2 w-full mt-5 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
+                 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
+            required
+          />
+        ))
+      : null;
 
   const downloadImage = (imageUrl) => {
     // Create a temporary anchor element
@@ -142,7 +164,7 @@ const CampaignPage = () => {
                 <p>Upload your photo and then download or share the poster</p>
               </div>
               <form className="grid" onSubmit={handleFormSubmit}>
-                {data.text_field && (
+                {/* {data.text_field && (
                   <input
                     type="text"
                     value={textValue}
@@ -152,7 +174,8 @@ const CampaignPage = () => {
                   placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
                     required
                   />
-                )}
+                )}  */}
+                {DynamicTextFields}
                 <ImageTool
                   visible={showModel}
                   onClose={toggleShow}
