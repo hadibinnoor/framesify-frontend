@@ -105,7 +105,7 @@ const CampaignPage = () => {
     fetchData();
   }, [user_id]);
 
-  const stateValues = [];
+  // const stateValues = [];
 
   const DynamicTextFields =
     data && data.text_field
@@ -117,7 +117,7 @@ const CampaignPage = () => {
             onChange={(event) => handleInputChange(event, index)}
             placeholder={item}
             className="rounded block border-2 w-full mt-5 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
-                 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
+            placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
             required
           />
         ))
