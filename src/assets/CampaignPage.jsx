@@ -146,9 +146,9 @@ const CampaignPage = () => {
   return (
     <div className="">
       {loading ? (
-        <LoadingComponent />
+        <LoadingComponent text="Your Poster is on the way...." />
       ) : (
-        <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 p-5 flex item-center justify-center">
+        <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 flex item-center justify-center">
           {!resultImage ? (
             <div className="absolute bg-white mt-10 p-10 flex-col justify-center h-fit rounded md:w-1/2 lg:w-1/3 border-2">
               <img src={data.frame_image} alt="Template" />
@@ -182,7 +182,7 @@ const CampaignPage = () => {
               </form>
             </div>
           ) : (
-            <div className=" bg-white p-10 flex-col justify-center rounded md:w-1/2 lg:w-1/3 h-fit space-y-10 border-2">
+            <div className=" bg-white p-10 mt-10 flex-col justify-center rounded md:w-1/2 lg:w-1/3 h-fit space-y-10 border-2">
               <img src={resultImage} alt="Result Image" />
               <div className=" mobile_flex">
                 <button

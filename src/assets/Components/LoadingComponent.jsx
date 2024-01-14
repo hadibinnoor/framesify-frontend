@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import "./LoadingComponent.scss";
-const LoadingComponent2 = () => {
+const LoadingComponent2 = (props) => {
   return (
     <div className="wrapper">
       <div className="box-wrap">
@@ -10,6 +11,7 @@ const LoadingComponent2 = () => {
         <div className="box five"></div>
         <div className="box six"></div>
       </div>
+      <h1 className="font-semibold">{props.text}</h1>
     </div>
   );
 };
