@@ -93,7 +93,11 @@ const CampaignPage = () => {
         `https://api.framesify.com/campaign/${user_id}`
       );
       setData(result.data);
-      setTextValues(new Array(result.data.text_field.length).fill(""));
+      setTextValues(
+        result.data.text_field
+          ? new Array(result.data.text_field.length).fill("")
+          : []
+      );
     };
     fetchData();
   }, [user_id]);
