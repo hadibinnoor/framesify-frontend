@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import ImageTool from "./Components/ImageTool";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import LoadingComponent from "./Components/LoadingComponent";
+// import LoadingComponent from "./Components/LoadingComponent";
+import LoadingComponent2 from "./Components/LoadingComponent2";
 
 const CampaignPage = () => {
   const [showModel, setShowModel] = useState(false);
@@ -145,11 +146,11 @@ const CampaignPage = () => {
     window.location.reload();
   };
 
-  if (!data) return <LoadingComponent />;
+  if (!data) return <LoadingComponent2 />;
   return (
     <div className="">
       {loading ? (
-        <LoadingComponent />
+        <LoadingComponent2 />
       ) : (
         <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 p-5 flex item-center justify-center">
           {!resultImage ? (
