@@ -14,12 +14,7 @@ const CampaignPage = () => {
   const [loading, setLoading] = useState(false);
 
   const { user_id } = useParams();
-  // const currentUrl = window.location.href;
 
-  // console.log(data.text_field);
-  // const handleTextChange = (event) => {
-  //   setTextValue(event.target.value);
-  // };
   const handleInputChange = (event, index) => {
     const newValues = [...textValues];
     newValues[index] = event.target.value;
@@ -58,14 +53,12 @@ const CampaignPage = () => {
       // Create a Blob from ArrayBuffer
       return new Blob([ab], { type: mimeType });
     };
-    console.log(textValues);
 
     if (data.text_field) {
       formData.append("textData", textValues);
     }
 
     const blobObject = dataURItoBlob(imgAfterCrop);
-    // console.log(blobObject);
     formData.append("croppedImage", blobObject);
 
     // Send formData to backend using fetch or your preferred method
@@ -84,7 +77,6 @@ const CampaignPage = () => {
       }
 
       const data = await response.json();
-      // console.log(data);
       const resultant = dataURItoBlob(data);
       const blobURL = URL.createObjectURL(resultant);
       setResultImage(blobURL);
@@ -101,6 +93,7 @@ const CampaignPage = () => {
         `https://api.framesify.com/campaign/${user_id}`
       );
       setData(result.data);
+      setTextValues(new Array(result.data.text_field.length).fill(""));
     };
     fetchData();
   }, [user_id]);
@@ -153,7 +146,7 @@ const CampaignPage = () => {
       ) : (
         <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 p-5 flex item-center justify-center">
           {!resultImage ? (
-            <div className="absolute bg-white mt-10 p-10 flex-column justify-center h-fit rounded md:w-1/2 lg:w-1/3 border-2">
+            <div className="absolute bg-white mt-10 p-10 flex-col justify-center h-fit rounded md:w-1/2 lg:w-1/3 border-2">
               <img src={data.frame_image} alt="Template" />
               <div className="mt-5 space-y-5">
                 <h1 className="text-3xl font-bold font-sans">
@@ -166,17 +159,6 @@ const CampaignPage = () => {
                 <p>Upload your photo and then download or share the poster</p>
               </div>
               <form className="grid" onSubmit={handleFormSubmit}>
-                {/* {data.text_field && (
-                  <input
-                    type="text"
-                    value={textValue}
-                    onChange={handleTextChange}
-                    placeholder={data.text_field}
-                    className="rounded block border-2 w-full mt-10 bg-transparent justify-self-center py-1.5 pl-1 text-gray-900 
-                  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 text-center placeholder-center"
-                    required
-                  />
-                )}  */}
                 {DynamicTextFields}
                 <ImageTool
                   visible={showModel}
@@ -196,7 +178,7 @@ const CampaignPage = () => {
               </form>
             </div>
           ) : (
-            <div className=" bg-white p-10 flex-column justify-center rounded md:w-1/2 lg:w-1/3 md:h-auto space-y-10">
+            <div className=" bg-white p-10 flex-col justify-center rounded md:w-1/2 lg:w-1/3 h-fit space-y-10 border-2">
               <img src={resultImage} alt="Result Image" />
               <div className=" mobile_flex">
                 <button

@@ -20,6 +20,16 @@ function FileInput({ onImageSelected, imageName }) {
   const onChooseImg = () => {
     inputRef.current.click();
   };
+  const hiddenStyle = {
+    position: "absolute",
+    width: "1px",
+    height: "1px",
+    margin: "-1px",
+    padding: "0",
+    overflow: "hidden",
+    clip: "rect(0, 0, 0, 0)",
+    border: "0",
+  };
 
   return (
     <div className="">
@@ -28,7 +38,7 @@ function FileInput({ onImageSelected, imageName }) {
         accept="image/*"
         ref={inputRef}
         onChange={handleOnChange}
-        style={{ display: "none" }}
+        style={hiddenStyle}
         required
       />
 
