@@ -6,10 +6,7 @@ const Pricing = ({ pricingRef }) => {
     <div ref={pricingRef} className="mt-20  space-y-10">
       <h1 className="text-3xl font-medium">Pricing</h1>
       <div className="flex overflow-x-scroll pb-10 hide-scroll-bar mt-10 space-x-10">
-        <div
-          className=" w-full
-         max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
-        >
+        <div className=" w-full max-w-sm p-4 border rounded-lg shadow sm:p-8 bg-gray-800 border-gray-700">
           <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
             Standard plan
           </h5>

@@ -126,25 +126,16 @@ const CampaignPage = () => {
       setLoading(false);
     } catch (error) {
       console.error("Error sending cropped image:", error);
-      // setLoading(false);
+      setIsValidUser(false);
     }
   };
 
   const downloadImage = (imageUrl) => {
-    // Create a temporary anchor element
     const downloadLink = document.createElement("a");
     downloadLink.href = imageUrl;
-
-    // Set the download attribute and filename
     downloadLink.download = `${data.client_title}.png`;
-
-    // Append the anchor element to the body
     document.body.appendChild(downloadLink);
-
-    // Trigger the click event to start the download
     downloadLink.click();
-
-    // Clean up: remove the anchor element
     document.body.removeChild(downloadLink);
   };
 
@@ -157,7 +148,7 @@ const CampaignPage = () => {
   return (
     <div className="">
       {loading ? (
-        <LoadingComponent text="Your Poster is on the way...." />
+        <LoadingComponent text="Your poster is on the way...." />
       ) : (
         <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 flex item-center justify-center">
           {!resultImage ? (
@@ -185,8 +176,7 @@ const CampaignPage = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-blue-700 mt-10 text-white font-medium rounded-full
-                  // text-sm px-5 py-2.5 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-20"
+                  className="bg-blue-700 mt-10 text-white font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-20"
                 >
                   Submit
                 </button>
