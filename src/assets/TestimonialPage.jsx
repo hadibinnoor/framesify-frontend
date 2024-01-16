@@ -6,7 +6,7 @@ import axios from "axios";
 import LoadingComponent from "./Components/LoadingComponent";
 import ErrorPage from "./ErrorPage";
 
-const CampaignPage = () => {
+const TestimonialPage = () => {
   const [showModel, setShowModel] = useState(false);
   const [data, setData] = useState(null);
   const [textValues, setTextValues] = useState([]);
@@ -230,4 +230,4 @@ const CampaignPage = () => {
   );
 };
 
-export default CampaignPage;
+export default TestimonialPage;

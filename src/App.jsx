@@ -4,6 +4,8 @@ import LandingPage from "./assets/LandingPage";
 import CampaignPage from "./assets/CampaignPage";
 import AboutPage from "./assets/AboutPage";
 import ContactPage from "./assets/ContactPage";
+import ErrorPage from "./assets/ErrorPage";
+import TestimonialPage from "./assets/TestimonialPage";
 
 const App = () => {
   return (
@@ -13,8 +15,8 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/campaign/:user_id" element={<CampaignPage />} />
-
-        {/* <Route path="*" element={<NoPage />} /> */}
+        <Route path="/testimonial/:user_id" element={<TestimonialPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
