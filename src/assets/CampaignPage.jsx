@@ -148,7 +148,7 @@ const CampaignPage = () => {
   return (
     <div className="">
       {loading ? (
-        <LoadingComponent text="Your poster is on the way...." />
+        <LoadingComponent text='"Your partner for pre and post event promotions"' />
       ) : (
         <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 flex item-center justify-center">
           {!resultImage ? (

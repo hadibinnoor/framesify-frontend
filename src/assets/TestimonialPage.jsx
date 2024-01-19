@@ -31,7 +31,7 @@ const TestimonialPage = () => {
     const fetchData = async () => {
       try {
         const result = await axios(
-          `https://api.framesify.com/campaign/${user_id}`
+          `https://api.framesify.com/testimonial/${user_id}`
         );
         if (result.data.frame_image === "Error") {
           setIsValidUser(false);
@@ -108,7 +108,7 @@ const TestimonialPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.framesify.com/campaign/${user_id}/download`,
+        `https://api.framesify.com/testimonial/${user_id}/download`,
         {
           method: "POST",
           body: formData,
@@ -157,7 +157,7 @@ const TestimonialPage = () => {
   return (
     <div className="">
       {loading ? (
-        <LoadingComponent text="Your poster is on the way...." />
+        <LoadingComponent text='"Your partner for pre and post event promotions"' />
       ) : (
         <div className="w-full h-[1100px]  sm:h-[1200px] bg-gray-500 flex item-center justify-center">
           {!resultImage ? (
@@ -175,6 +175,16 @@ const TestimonialPage = () => {
               </div>
               <form className="grid" onSubmit={handleFormSubmit}>
                 {DynamicTextFields}
+                <textarea
+                  id="myTextarea"
+                  placeholder="Enter your experience"
+                  className="border-2 p-2 resize-none text-center"
+                  style={{ textAlign: "center" }}
+                  value={textValues[1]}
+                  onChange={(event) => handleInputChange(event, 2)}
+                  rows={4}
+                  cols={50}
+                />
                 <ImageTool
                   visible={showModel}
                   onClose={toggleShow}
