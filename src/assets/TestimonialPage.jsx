@@ -178,7 +178,7 @@ const TestimonialPage = () => {
                 <textarea
                   id="myTextarea"
                   placeholder="Enter your experience"
-                  className="border-2 p-2 resize-none text-center"
+                  className="border-2 mt-5 p-2 resize-none text-center"
                   style={{ textAlign: "center" }}
                   value={textValues[1]}
                   onChange={(event) => handleInputChange(event, 2)}
