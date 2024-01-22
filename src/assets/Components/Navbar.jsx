@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Navbar = ({ pricingRef }) => {
-  const scrollToPricing = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
+const Navbar = () => {
+  // const scrollToPricing = (ref) => {
+  //   ref.current.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -46,7 +46,10 @@ const Navbar = ({ pricingRef }) => {
                         About
                       </li>
                     </Link>
-                    <Link to="/" onClick={() => scrollToPricing(pricingRef)}>
+                    <Link
+                      to="/pricing"
+                      // onClick={() => scrollToPricing(pricingRef)}
+                    >
                       <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                         Pricing
                       </li>
@@ -74,7 +77,10 @@ const Navbar = ({ pricingRef }) => {
                     About
                   </li>
                 </Link>
-                <Link to="/" onClick={() => scrollToPricing(pricingRef)}>
+                <Link
+                  to="/pricing"
+                  // onClick={() => scrollToPricing(pricingRef)}
+                >
                   <li className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                     Pricing
                   </li>
