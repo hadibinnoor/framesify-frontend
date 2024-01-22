@@ -7,6 +7,7 @@ import ContactPage from "./assets/ContactPage";
 import ErrorPage from "./assets/ErrorPage";
 import TestimonialPage from "./assets/TestimonialPage";
 import PricingPage from "./assets/PricingPage";
+import DailyRate from "./assets/DailyRate";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/campaign/:user_id" element={<CampaignPage />} />
         <Route path="/testimonial/:user_id" element={<TestimonialPage />} />
+        <Route path="/rates/:user_id" element={<DailyRate />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
