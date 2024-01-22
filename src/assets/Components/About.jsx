@@ -2,12 +2,9 @@
 /* eslint-disable react/no-unescaped-entities */
 const About = () => {
   return (
-    <div
-      className="bg-[#edf8f8]"
-      // className="flex-1 overflow-y-auto p-20 h-auto flex gap-20 bg-[#edf8f8]"
-    >
-      <div className="flex-colummn p-10 gap-x-5 space-y-5">
-        <h1 className="text-3xl font-medium mt-10">What Does Framesify Do ?</h1>
+    <div className="bg-[#edf8f8] py-5 md:flex lg:py-10">
+      <div className="flex-colummn p-10 space-y-5 lg:px-32">
+        <h1 className="text-3xl font-medium ">What Does Framesify Do ?</h1>
         <h1 className="text-xl mt-5">Hosting an offline event?</h1>
         <p className="">
           Whether it's a fundraiser, political gathering, or social affair,
@@ -23,8 +20,8 @@ const About = () => {
           town with Framesify!
         </p>
       </div>
-      <div className="">
-        <iframe src="https://giphy.com/embed/3oz8xAcGUfJvLiHG92"></iframe>
+      <div className="lg:w-1/2 flex justify-center">
+        <iframe src="demo.gif" height="450px" width="250px"></iframe>
       </div>
     </div>
   );

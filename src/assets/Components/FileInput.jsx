@@ -20,20 +20,30 @@ function FileInput({ onImageSelected, imageName }) {
   const onChooseImg = () => {
     inputRef.current.click();
   };
+  const hiddenStyle = {
+    position: "absolute",
+    width: "1px",
+    height: "1px",
+    margin: "-1px",
+    padding: "0",
+    overflow: "hidden",
+    clip: "rect(0, 0, 0, 0)",
+    border: "0",
+  };
 
   return (
-    <div>
+    <div className="">
       <input
         type="file"
         accept="image/*"
         ref={inputRef}
         onChange={handleOnChange}
-        style={{ display: "none" }}
+        style={hiddenStyle}
         required
       />
 
       <button
-        className="mt-5 relative m-0 block w-full min-w-0 flex-auto
+        className="mt-5 relative w-full m-0 block flex-auto
          rounded border border-solid border-neutral-300 bg-clip-padding 
          px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out 
          file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 
