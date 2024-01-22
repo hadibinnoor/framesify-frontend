@@ -31,7 +31,7 @@ const TestimonialPage = () => {
     const fetchData = async () => {
       try {
         const result = await axios(
-          `https://api.framesify.com/testimonial/${user_id}`
+          `http://127.0.0.1:5000/testimonial/${user_id}`
         );
         if (result.data.frame_image === "Error") {
           setIsValidUser(false);
@@ -108,7 +108,7 @@ const TestimonialPage = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.framesify.com/testimonial/${user_id}/download`,
+        `http://127.0.0.1:5000/testimonial/${user_id}/download`,
         {
           method: "POST",
           body: formData,
