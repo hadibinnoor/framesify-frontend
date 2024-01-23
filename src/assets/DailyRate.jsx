@@ -24,7 +24,7 @@ const DailyRate = () => {
     const fetchData = async () => {
       try {
         const result = await axios(
-          `https://api.framesify.com/campaign/${user_id}`
+          `https://api.framesify.com/rates/${user_id}`
         );
         if (result.data.frame_image === "Error") {
           setIsValidUser(false);
@@ -98,7 +98,7 @@ const DailyRate = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.framesify.com/campaign/${user_id}/download`,
+        `https://api.framesify.com/rates/${user_id}/download`,
         {
           method: "POST",
           body: formData,
