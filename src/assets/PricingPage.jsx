@@ -48,7 +48,7 @@ const PricingPage = () => {
                   Single Link
                 </h2>
               </li>
-              <li className="flex">
+{/*               <li className="flex">
                 <svg
                   className="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
                   aria-hidden="true"
@@ -61,7 +61,7 @@ const PricingPage = () => {
                 <h2 className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
                   Frame Design
                 </h2>
-              </li>
+              </li> */}
               <li className="flex">
                 <svg
                   className="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
@@ -103,8 +103,7 @@ const PricingPage = () => {
         </div>
         <p className="font-l">
           <span className="font-semibold">Note:</span> You will be redirected to
-          Whatsapp when you click on “Choose Plan”. We will communicate
-          regarding design and all there.
+          Whatsapp when you click on "Choose Plan". Additional charges will be applied for frame designing.
         </p>
       </main>
       <Footer />
