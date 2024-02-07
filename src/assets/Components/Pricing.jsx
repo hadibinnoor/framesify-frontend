@@ -98,8 +98,7 @@ const Pricing = ({ pricingRef }) => {
       </div>
       <p className="font-l">
         <span className="font-semibold">Note:</span> You will be redirected to
-        Whatsapp when you click on “Choose Plan”. We will communicate regarding
-        design and all there.
+        Whatsapp when you click on “Choose Plan”. Additional charges will be applied for frame designing.
       </p>
     </div>
   );
