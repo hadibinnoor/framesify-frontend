@@ -43,7 +43,7 @@ const Pricing = ({ pricingRef }) => {
                 Single Link
               </h2>
             </li>
-            <li className="flex">
+{/*             <li className="flex">
               <svg
                 className="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
                 aria-hidden="true"
@@ -56,7 +56,7 @@ const Pricing = ({ pricingRef }) => {
               <h2 className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
                 Frame Design
               </h2>
-            </li>
+            </li> */}
             <li className="flex">
               <svg
                 className="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
