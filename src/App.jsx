@@ -8,6 +8,7 @@ import ErrorPage from "./assets/ErrorPage";
 import TestimonialPage from "./assets/TestimonialPage";
 import PricingPage from "./assets/PricingPage";
 import DailyRate from "./assets/DailyRate";
+import CertificatePage from "./assets/CertificatePage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/campaign/:user_id" element={<CampaignPage />} />
         <Route path="/testimonial/:user_id" element={<TestimonialPage />} />
         <Route path="/rates/:user_id" element={<DailyRate />} />
+        <Route path="/certificate/:user_id" element={<CertificatePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
