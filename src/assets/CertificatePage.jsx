@@ -5,7 +5,7 @@ import axios from "axios";
 import LoadingComponent from "./Components/LoadingComponent";
 import ErrorPage from "./ErrorPage";
 
-const DailyRate = () => {
+const CertificatePage = () => {
   const [data, setData] = useState(null);
   const [textValues, setTextValues] = useState([]);
   const [resultImage, setResultImage] = useState("");
@@ -149,11 +149,8 @@ const DailyRate = () => {
                 <h1 className="text-3xl font-bold font-sans">
                   {data.client_title}
                 </h1>
-                <p>
-                  Create personalized posters to show your support for the
-                  event.
-                </p>
-                <p>Upload your photo and then download or share the poster</p>
+                <p>Generate Your Certificate for the event</p>
+                <p>Enter Your Name</p>
               </div>
               <form className="grid" onSubmit={handleFormSubmit}>
                 {DynamicTextFields}
@@ -203,4 +200,4 @@ const DailyRate = () => {
   );
 };
 
-export default DailyRate;
+export default CertificatePage;
