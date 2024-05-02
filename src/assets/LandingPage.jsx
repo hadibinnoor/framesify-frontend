@@ -6,6 +6,7 @@ import Working from "./Components/Working";
 import Footer from "./Components/Footer";
 import Pricing from "./Components/Pricing";
 import { useRef } from "react";
+import Banner from "./Components/Banner";
 
 const LandingPage = () => {
   const pricingRef = useRef(null);
@@ -15,6 +16,7 @@ const LandingPage = () => {
     <div className="w-full h-full flex-row item-center relative">
       <Navbar pricingRef={pricingRef} />
       <div className="">
+        <Banner />
         <Hero pricingRef={pricingRef} campaignRef={campaignRef} />
         <About />
         <div className="p-10 md:p-32">
